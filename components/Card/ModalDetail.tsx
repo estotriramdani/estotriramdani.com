@@ -27,7 +27,7 @@ export default function ModalDetail(props: Props) {
             })}
           </h5>
 
-          <p
+          <div
             className="modal-text"
             dangerouslySetInnerHTML={{ __html: description }}
           />

@@ -39,7 +39,7 @@ export default function Card(props: ICard) {
               {subtitle}
             </h5>
           ))}
-          <p
+          <div
             className="card-text"
             dangerouslySetInnerHTML={{
               __html: `${description.substring(0, 50)}...`,
