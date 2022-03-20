@@ -1,11 +1,4 @@
 export interface IContents {
-  categories: Category[];
-}
-
-export interface Category {
-  id: string;
-  name: string;
-  slug: string;
   contents: Content[];
 }
 
@@ -15,6 +8,7 @@ export interface Content {
   slug: string;
   title: string;
   subtitles: string[];
+  category?: string;
   description: Description;
   createdAt: string;
   updatedAt: string;

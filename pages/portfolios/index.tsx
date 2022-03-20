@@ -5,7 +5,7 @@ import Card from '../../components/Card/Card';
 import { IContents } from '../../interfaces';
 
 export default function Portfolios(props: IContents) {
-  const contents = props.categories[0].contents;
+  const contents = props.contents;
   return (
     <>
       <Head>
@@ -37,26 +37,22 @@ export default function Portfolios(props: IContents) {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const query = gql`
-    query Category {
-      categories(where: { slug: "portfolios" }) {
+    query Contents {
+      contents(orderBy: publishedAt_ASC) {
         id
-        name
-        slug
-        contents {
+        cover {
           id
-          cover {
-            id
-            url
-          }
-          slug
-          title
-          subtitles
-          description {
-            html
-          }
-          createdAt
-          updatedAt
+          url
         }
+        slug
+        title
+        subtitles
+        category
+        description {
+          html
+        }
+        createdAt
+        updatedAt
       }
     }
   `;
