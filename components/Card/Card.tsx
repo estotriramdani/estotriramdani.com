@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import classes from './Card.module.css';
 import ModalDetail from './ModalDetail';
 
@@ -30,8 +31,19 @@ export default function Card(props: ICard) {
   const { id, title, cover, subtitles, description } = props;
   return (
     <div className="col sm-6">
-      <div className="card" style={{ width: '100%' }}>
-        <img src={cover} alt="Card example image" className={classes.thumb} />
+      <div className="card" style={{ width: '100%', height: '100%' }}>
+        <div className={classes.imgWrapper}>
+          <Image
+            objectFit="cover"
+            width={`100%`}
+            height={`40rem`}
+            lazyBoundary="window"
+            layout="responsive"
+            src={cover}
+            alt={title}
+            quality={50}
+          />
+        </div>
         <div className="card-body">
           <h4 className="card-title">{title}</h4>
           {subtitles.map((subtitle) => (
