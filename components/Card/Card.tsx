@@ -37,7 +37,6 @@ export default function Card(props: ICard) {
             objectFit="cover"
             width={`100%`}
             height={`40rem`}
-            lazyBoundary="window"
             layout="responsive"
             src={cover}
             alt={title}
