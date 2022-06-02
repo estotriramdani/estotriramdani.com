@@ -1,3 +1,5 @@
+import classes from './BlogCard.module.css';
+
 export default function BlogCard() {
   return (
     <div className="overflow-hidden rounded-xl bg-slate-50">
@@ -9,7 +11,7 @@ export default function BlogCard() {
       </div>
       <div>
         <img
-          className="h-52 w-full object-cover"
+          className={classes.imageCover}
           src="https://dummyimage.com/600x400/000/fff"
           alt="image"
         />

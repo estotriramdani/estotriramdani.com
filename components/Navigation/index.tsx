@@ -7,6 +7,12 @@ const animations = {
   exit: { opacity: 0 },
 };
 
+function classToggle(isToggle: boolean, from: number, to: number) {
+  return `inline-block h-[3px] w-${
+    isToggle ? `${from}` : `${to}`
+  } bg-slate-800 transition-all duration-150`;
+}
+
 export default function Navigation() {
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
@@ -20,24 +26,14 @@ export default function Navigation() {
           className="relative flex flex-col items-end gap-1"
           onClick={() => setToggleMenu(!toggleMenu)}
         >
-          {!toggleMenu ? (
-            <>
-              <span className="inline-block h-[3px] w-6 bg-slate-800" />
-              <span className="inline-block h-[3px] w-6 bg-slate-800" />
-              <span className="inline-block h-[3px] w-4 bg-slate-800" />
-            </>
-          ) : (
-            <>
-              <span className="inline-block h-[3px] w-4 bg-slate-800" />
-              <span className="inline-block h-[3px] w-6 bg-slate-800" />
-              <span className="inline-block h-[3px] w-3 bg-slate-800" />
-            </>
-          )}
+          <span className={classToggle(toggleMenu, 4, 6)} />
+          <span className={classToggle(toggleMenu, 6, 6)} />
+          <span className={classToggle(toggleMenu, 4, 5)} />
         </button>
       </nav>
       {toggleMenu && (
         <div
-          className="fixed top-14 left-0 z-50 w-full overflow-auto bg-slate-100"
+          className="fixed top-14 left-0 right-0 z-50 w-full overflow-auto bg-slate-100 lg:mx-auto lg:w-[400px]"
           style={{ height: 'calc(100vh - 3.5rem)' }}
         >
           <p>ok</p>
