@@ -3,9 +3,9 @@ import type { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className="mx-auto w-[400px] shadow-lg">
-      <Component {...pageProps} />
-    </div>
+    // <div className="mx-auto w-[400px] shadow-lg">
+    <Component {...pageProps} />
+    // </div>
   );
 }
 
