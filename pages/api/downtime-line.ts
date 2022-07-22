@@ -1,5 +1,5 @@
-import data from './downtime-data.json';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import data from './posts.json';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res
