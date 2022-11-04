@@ -30,7 +30,7 @@ export default function NotesPage() {
   });
   const [loading, setLoading] = useState(false);
   const url =
-    'http://ec2-13-228-28-71.ap-southeast-1.compute.amazonaws.com:5000/notes';
+    'http://ec2-13-228-28-71.ap-southeast-1.compute.amazonaws.com/notes';
   const args = swrArgs(url, {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
