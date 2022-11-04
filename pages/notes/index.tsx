@@ -78,6 +78,10 @@ export default function NotesPage() {
     <>
       <Head>
         <title>Notes</title>
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        />
       </Head>
       <div className="min-h-screen w-full bg-gray-800 font-mono text-gray-50">
         <main className="mx-auto w-full px-6 py-6 lg:w-1/2">
