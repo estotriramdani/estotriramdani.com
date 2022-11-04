@@ -1,10 +1,18 @@
 import Head from 'next/head';
-import BlogCard from '../components/BlogCard';
-import HeroSection from '../components/HeroSection';
-import Navigation from '../components/Navigation';
-import { Heading3 } from '../components/Typography';
+import useSWR from 'swr';
+import { fetchAPI, swrArgs } from '../services/fecth';
 
 export default function Home() {
+  const url =
+    'http://ec2-13-228-28-71.ap-southeast-1.compute.amazonaws.com:5000/notes';
+  const args = swrArgs(url, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
+  const { data, error } = useSWR(args, fetchAPI, {
+    revalidateOnFocus: false,
+  });
+
   return (
     <>
       <Head>
