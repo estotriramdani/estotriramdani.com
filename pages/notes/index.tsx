@@ -29,8 +29,7 @@ export default function NotesPage() {
     body: '',
   });
   const [loading, setLoading] = useState(false);
-  const url =
-    'http://ec2-13-228-28-71.ap-southeast-1.compute.amazonaws.com/notes';
+  const url = 'https://estotriramdani.com/notes';
   const args = swrArgs(url, {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
